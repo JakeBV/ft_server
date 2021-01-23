@@ -1,0 +1,26 @@
+Сборка контейнера
+docker build -t <NAME> .
+
+Запуск контейнера
+docker run -it --rm -p 80:80 -p 443:443 <NAME>
+
+Запущенные контейнеры
+docker ps
+
+Команда внутри контейнера (запущенного)
+docker exec -it <CONTAINER_ID> <COMMAND>
+
+Запуск докера в фоне
+docker run -it -d --rm -p 80:80 -p 443:443 <NAME>
+
+Остановить все контейнеры
+docker stop $(docker ps -a -q)
+
+Удалить все контейнеры
+docker rmi $(docker images -a -q)
+
+Все контейнеры (остановленные в том числе)
+docker ps -a
+
+Почистить все
+docker system prune -a
